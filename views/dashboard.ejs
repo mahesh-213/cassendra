@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+   <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+h1, a {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    transition: background 0.5s ease;
+}
+
+h1 {
+    background: var(--h1-background);
+}
+
+a {
+    background: var(--a-background);
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+}
+</style>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <a href="/logout">Logout</a>
+    <button onclick="changeColors()">Change Colors</button>
+    <script>function changeColors() {
+        const h1 = document.querySelector('h1');
+        const a = document.querySelector('a');
+        
+        // Generate random colors
+        const randomColor1 = '#' + Math.floor(Math.random()*16777215).toString(16);
+        const randomColor2 = '#' + Math.floor(Math.random()*16777215).toString(16);
+        
+        // Set CSS variables
+        h1.style.setProperty('--h1-background', `linear-gradient(45deg, ${randomColor1}, ${randomColor2})`);
+        a.style.setProperty('--a-background', `linear-gradient(45deg, ${randomColor2}, ${randomColor1})`);
+    }
+    </script>
+</body>
+
+</html>
